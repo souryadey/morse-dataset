@@ -30,8 +30,10 @@ Here is a more succinct description of the Python script:
 	
 
 2 already generated datasets are included:
+
 	baseline.npz : Uses default parameters
 	difficult.npz : Uses noisesd=4, leadingsp_rand=1, minlendash=3
+
 Use these commands to extract the data and labels into training, validation and test:
 
 	data = np.load('./baseline.npz')
@@ -43,5 +45,4 @@ Use these commands to extract the data and labels into training, validation and 
 	ytest = data['yte']
 	
 
-For a guide to Morse code symbols, see morse_tree.png
-Go left for dots and right for dashes
+For a guide to Morse code symbols, see morse_tree.png. Go left for dots and right for dashes.
