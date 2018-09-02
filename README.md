@@ -1,7 +1,7 @@
 # morse-dataset
-Generate Morse code datasets for machine learning algotihms such as artificial neural networks
+Generate synthetic datasets for Morse code symbol classification for machine learning algotihms such as artificial neural networks
 
-Complete description and motivation soon to follow after I finish writing a paper on this. For now, my blog has a fairly nice description : https://cobaltfolly.wordpress.com/2017/10/15/morse-code-dataset-for-artificial-neural-networks
+Won the Best Paper Award at the 9th International Conference on Computing, Communications and Networking Technologies (ICCCNT) 2018. IEEExplore link soon to follow. For a quick description, see Sourya Dey's blog: https://cobaltfolly.wordpress.com/2017/10/15/morse-code-dataset-for-artificial-neural-networks
 
 Here is a more succinct description of the Python script:
 
