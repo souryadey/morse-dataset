@@ -1,15 +1,15 @@
 # morse-dataset
-#### Generate synthetic datasets for Morse code symbol classification for machine learning algotihms such as artificial neural networks.
-#### Compute the inherent difficulty of the classification problem on these datasets using different metrics.
+### Generate synthetic datasets for Morse code symbol classification for machine learning algotihms such as artificial neural networks.
+### Compute the inherent difficulty of the classification problem on these datasets using different metrics.
 
-This **research paper** has more details. Please consider citing it if you use or benefit from this work:<br>
+<br>This **research paper** has more details. Please consider citing it if you use or benefit from this work:
 S. Dey, K. M. Chugg and P. A. Beerel, “Morse Code Datasets for Machine Learning,” in _9th International Conference on Computing, Communication and Networking Technologies (ICCCNT)_, pp. 1-7, Jul 2018. Won Best Paper Award.<br>
 Available on [IEEE](https://ieeexplore.ieee.org/document/8494011) and [arXiv](https://arxiv.org/abs/1807.04239) (copyright owned by IEEE).
 
-For a short description of dataset generation, see Sourya Dey's [blog post](https://cobaltfolly.wordpress.com/2017/10/15/morse-code-dataset-for-artificial-neural-networks)
+<br>For a short description of dataset generation, see Sourya Dey's [blog post](https://cobaltfolly.wordpress.com/2017/10/15/morse-code-dataset-for-artificial-neural-networks)<br>
+For a guide to Morse code symbols, see [morse_tree](./morse_tree.png). Go left for dots and right for dashes.
 
-**Requirements**: Python 2.7, numpy, scipy
-
+<br>**Requirements**: Python 2.7, numpy, scipy
 
 Description of [generate_morse_dataset.py](./generate_morse_dataset.py):
 
@@ -55,5 +55,3 @@ ytest = data['yte']
 Run [dataset_metrics](./dataset_metrics.py) to test dataset difficulty, for example:
 	
 	L, U, D, T = dataset_metrics('./baseline.npz')
-
-For a guide to Morse code symbols, see [morse_tree](./morse_tree.png). Go left for dots and right for dashes.
