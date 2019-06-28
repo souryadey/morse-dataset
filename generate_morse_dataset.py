@@ -3,6 +3,8 @@
 #==============================================================================
 
 import numpy as np
+
+
 def store_morse_data(Style='GRAY', save_filename = '',
                      Framelen = 64, dilation=1, Classes = 64,
                      TReach = 5000, VAeach = 1000, TEeach = 1000,
