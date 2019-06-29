@@ -1,5 +1,3 @@
-reduce headings
-
 # morse-dataset
 #### Generate synthetic datasets for Morse code symbol classification for machine learning algotihms such as artificial neural networks.
 #### Compute the inherent difficulty of the classification problem on these datasets using different metrics.
