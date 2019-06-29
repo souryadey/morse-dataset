@@ -56,25 +56,25 @@ def store_morse_data(Style='GRAY', save_filename = '',
     ydata = np.zeros((TOTcases,Classes),dtype='float')
     index = 0
 
-    for n in xrange(len(Codebook)):
+    for n in range(len(Codebook)):
         code = Codebook.values()[n]
 
-        for repeat in xrange(TOTeach):
+        for repeat in range(TOTeach):
             ydata[index][n] = 1
 
             if Style=='BW':
                 bitcode = []
-                for c in xrange(len(code)): #parse through dots and dashes
+                for c in range(len(code)): #parse through dots and dashes
                     if code[c]=='.':
-                        bitcode.extend([1 for i in xrange(np.random.randint(minlendot,maxlendot+1))])
+                        bitcode.extend([1 for i in range(np.random.randint(minlendot,maxlendot+1))])
                     else:
-                        bitcode.extend([1 for i in xrange(np.random.randint(minlendash,maxlendash+1))])
+                        bitcode.extend([1 for i in range(np.random.randint(minlendash,maxlendash+1))])
                     if c != len(code)-1: #don't add space after last dot or dash
-                        bitcode.extend([0 for i in xrange(np.random.randint(minlensp,maxlensp+1))])
+                        bitcode.extend([0 for i in range(np.random.randint(minlensp,maxlensp+1))])
 
             elif Style=='GRAY':
                 bitcode = np.array(())
-                for c in xrange(len(code)): #parse through dots and dashes
+                for c in range(len(code)): #parse through dots and dashes
                     if code[c]=='.':
                         bitcode = np.append(bitcode, symbsd*np.random.randn(np.random.randint(minlendot,maxlendot+1))+symbmean)
                     else:
@@ -85,11 +85,11 @@ def store_morse_data(Style='GRAY', save_filename = '',
             ## Leading and trailing spaces
             ltsp = Framelen - len(bitcode) #total number of spaces required
             if leadingsp_rand==1:
-                lsp = [0 for i in xrange(np.random.randint(ltsp+1))] #leading spaces
-                tsp = [0 for i in xrange(ltsp - len(lsp))] #trailing spaces
+                lsp = [0 for i in range(np.random.randint(ltsp+1))] #leading spaces
+                tsp = [0 for i in range(ltsp - len(lsp))] #trailing spaces
             else:
                 lsp = []
-                tsp = [0 for i in xrange(ltsp)]
+                tsp = [0 for i in range(ltsp)]
             xdata[index] = np.concatenate((np.asarray(lsp),np.asarray(bitcode),np.asarray(tsp)))
 
             ## Noise
@@ -103,7 +103,7 @@ def store_morse_data(Style='GRAY', save_filename = '',
 
             index += 1
 
-        print '{0}/{1}'.format(n+1,Classes) #progress...
+        print('{0}/{1}'.format(n+1,Classes)) #progress...
 
     ### Post-processing
     if Style=='GRAY':
@@ -121,7 +121,7 @@ def store_morse_data(Style='GRAY', save_filename = '',
     yva = np.zeros((VAcases,Classes))
     xte = np.zeros((TEcases,Framelen))
     yte = np.zeros((TEcases,Classes))
-    for i in xrange(Classes):
+    for i in range(Classes):
         xtr[i*TReach:(i+1)*TReach,:] = xdata[i*TOTeach:i*TOTeach+TReach,:]
         ytr[i*TReach:(i+1)*TReach] = ydata[i*TOTeach:i*TOTeach+TReach]
         xva[i*VAeach:(i+1)*VAeach] = xdata[i*TOTeach+TReach:i*TOTeach+TReach+VAeach]

@@ -1,17 +1,19 @@
-# morse-dataset
-### Generate synthetic datasets for Morse code symbol classification for machine learning algotihms such as artificial neural networks.
-### Compute the inherent difficulty of the classification problem on these datasets using different metrics.
+reduce headings
 
-<br>This **research paper** has more details. Please consider citing it if you use or benefit from this work:
-S. Dey, K. M. Chugg and P. A. Beerel, “Morse Code Datasets for Machine Learning,” in _9th International Conference on Computing, Communication and Networking Technologies (ICCCNT)_, pp. 1-7, Jul 2018. Won Best Paper Award.<br>
+# morse-dataset
+#### Generate synthetic datasets for Morse code symbol classification for machine learning algotihms such as artificial neural networks.
+#### Compute the inherent difficulty of the classification problem on these datasets using different metrics.
+
+<br>This **research paper** has more details. Please consider citing it if you use or benefit from this work:<br>
+S. Dey, K. M. Chugg and P. A. Beerel, “Morse Code Datasets for Machine Learning,” in _9th International Conference on Computing, Communication and Networking Technologies (ICCCNT)_, pp. 1-7, Jul 2018. (Won Best Paper Award)<br>
 Available on [IEEE](https://ieeexplore.ieee.org/document/8494011) and [arXiv](https://arxiv.org/abs/1807.04239) (copyright owned by IEEE).
 
 <br>For a short description of dataset generation, see Sourya Dey's [blog post](https://cobaltfolly.wordpress.com/2017/10/15/morse-code-dataset-for-artificial-neural-networks)<br>
 For a guide to Morse code symbols, see [morse_tree](./morse_tree.png). Go left for dots and right for dashes.
 
-<br>**Requirements**: Python 2.7, numpy, scipy
+<br>**Requirements**: Python 3, numpy, scipy
 
-Description of [generate_morse_dataset.py](./generate_morse_dataset.py):
+<br>Description of [generate_morse_dataset.py](./generate_morse_dataset.py):
 
 	Create morse code datasets:
 	    Style='BW': Black and white having 0s for spaces and 1s for dot or dash. Noise means bit flips
@@ -41,17 +43,12 @@ Description of [generate_morse_dataset.py](./generate_morse_dataset.py):
 - baseline.npz : Uses default parameters
 - difficult.npz : Uses noisesd=4, leadingsp_rand=1, minlendash=3
 
-Use these commands to extract the data and labels into training, validation and test:
+Use `load_any_data` to extract the data and labels into training, validation and test:
 ```
-data = np.load('./baseline.npz')
-xtrain = data['xtr']
-ytrain = data['ytr']
-xval = data['xva']
-yval = data['yva']
-xtest = data['xte']
-ytest = data['yte']
+xtrain, ytrain, xval, yval, xtest, ytest = load_any_data(filename = './baseline.npz')
 ```
 
 Run [dataset_metrics](./dataset_metrics.py) to test dataset difficulty, for example:
-	
-	L, U, D, T = dataset_metrics('./baseline.npz')
+```
+L, U, D, T = dataset_metrics('./baseline.npz')
+```
