@@ -41,9 +41,9 @@ For a guide to Morse code symbols, see [morse_tree](./morse_tree.png). Go left f
 - baseline.npz : Uses default parameters
 - difficult.npz : Uses noisesd=4, leadingsp_rand=1, minlendash=3
 
-Use `load_any_data` to extract the data and labels into training, validation and test:
+Use `load_data` to extract the data and labels into training, validation and test:
 ```
-xtrain, ytrain, xval, yval, xtest, ytest = load_any_data(filename = './baseline.npz')
+xtrain, ytrain, xval, yval, xtest, ytest = load_data(filename = './baseline.npz')
 ```
 
 Run [dataset_metrics](./dataset_metrics.py) to test dataset difficulty, for example:
