@@ -9,7 +9,7 @@ Available on [IEEE](https://ieeexplore.ieee.org/document/8494011) and [arXiv](ht
 <br>For a short description of dataset generation, see Sourya Dey's [blog post](https://cobaltfolly.wordpress.com/2017/10/15/morse-code-dataset-for-artificial-neural-networks)<br>
 For a guide to Morse code symbols, see [morse_tree](./morse_tree.png). Go left for dots and right for dashes.
 
-This family of datasets now has its own [IEEEDataPort page](https://ieee-dataport.org/open-access/morse-code-symbol-classification)
+This family of datasets now has its own [IEEEDataPort page](https://ieee-dataport.org/open-access/morse-code-symbol-classification) and [competition](http://ieee-dataport.org/competitions/morse-code-symbol-classification) (open till October 14, 2020!)
 
 <br>**Requirements**: Python 3, numpy, scipy
 
@@ -52,3 +52,4 @@ Run [dataset_metrics](./dataset_metrics.py) to test dataset difficulty, for exam
 ```
 L, U, D, T = dataset_metrics('./baseline.npz')
 ```
+
